@@ -1,7 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {"src": "app.py", "use": "@vercel/python"}
+    {
+      "src": "app.py",
+      "use": "@vercel/python",
+      "config": {
+        "install-command": "apt update && apt install -y apturl && pip install --no-cache-dir -r requirements.txt"
+      }
+    }
   ],
   "routes": [
     {"src": "/(.*)", "dest": "app.py"}
