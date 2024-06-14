@@ -1,7 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {"src": "app.py", "use": "@vecel/python"}
+    {"src": "app.py", "use": "@vecel/python3"}
   ],
   "routes": [
     {"src": "/(.*)", "dest": "app.py"}
