@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Praça Brail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully responsive Tailwind CSS Multipurpose agency, application, business, clean, creative, cryptocurrency, it solutions, startup, career, blog, modern, creative, multipurpose, portfolio, saas, software, tailwind css, etc."
+      name="description"
+    />
+    <meta content="Techzaa" name="author" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Theme favicon -->
+    <!-- <link rel="shortcut icon" href="./static/images/favicon.ico" /> -->
+
+    <!-- glightbox css -->
+    <link rel="stylesheet" href="/static/libs/glightbox/css/glightbox.min.css" />
+
+    <!-- Style css -->
+    <link href="/static/css/style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Icons css -->
+    <link href="/static/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      /* Adicione seu estilo existente aqui */
+      #navbar {
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========== Navbar Start =========== -->
+    <header
+      id="navbar"
+      class="fixed top-0 inset-x-0 flex items-center z-10 w-full bg-white transition-all transform py-5 uppercase"
+    >
+      <div class="container">
+        <nav class="flex items-center duration-200">
+          <!-- Navbar Brand Logo -->
+          <a href="index.html" class="flex items-center gap-2">
+            <img class="w-[60px]" src="/static/images/logo.png" alt="logo" />
+          </a>
+
+          <!-- Nevigation Menu -->
+          <div class="hidden lg:block ms-auto">
+            <ul class="navbar-nav flex gap-x-8 items-center justify-center">
+              <!-- Inner Page Dropdown -->
+              <li class="nav-item">
+                <a
+                  href="index.html#inicio"
+                  class="text-[#B47943] duration-300 button"
+                  >inicio</a
+                >
+              </li>
+
+              <!-- Inner Page Dropdown -->
+              <li class="nav-item">
+                <a href="#audio-guia" class="text-[#B47943] duration-300 button"
+                  >audio guia</a
+                >
+              </li>
+
+              <!-- Inner Page Dropdown -->
+              <li class="nav-item">
+                <a href="#galeria" class="text-[#B47943] duration-300 button"
+                  >Galeria</a
+                >
+              </li>
+
+              <!-- Inner Page Dropdown -->
+              <li class="nav-item">
+                <a href="#sobre-nos" class="text-[#B47943] duration-300 button"
+                  >sobre nós</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Moblie Menu Toggle Button (Offcanvas Button) -->
+          <div class="lg:hidden flex items-center ms-auto px-2.5">
+            <button
+              type="button"
+              data-fc-target="mobileMenu"
+              data-fc-type="offcanvas"
+            >
+              <i class="fa-solid fa-bars text-2xl text-gray-500"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- =========== Navbar End =========== -->
+
+    <!-- =========== Mobile Menu Start (Offcanvas) =========== -->
+    <div
+      id="mobileMenu"
+      class="fc-offcanvas-open:translate-x-0 translate-x-full fixed top-0 end-0 transition-all duration-200 transform h-full w-full max-w-md z-50 bg-white border-s hidden"
+    >
+      <div class="flex flex-col h-full divide-y-2 divide-gray-200 uppercase">
+        <!-- Mobile Menu Topbar Logo (Header) -->
+        <div class="p-6 flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-2">
+            <img class="w-[60px] md:w-auto" src="/static/images/logo.png" alt="logo" />
+          </a>
+
+          <button data-fc-dismiss class="flex items-center px-2">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Link List -->
+        <div class="p-6 overflow-scroll h-full">
+          <ul class="navbar-nav flex flex-col gap-8">
+            <!-- Dropdown item -->
+            <li class="nav-item">
+              <a
+                href="index.html#inicio"
+                class="text-[#B47943] duration-300 button"
+                >inicio</a
+              >
+            </li>
+
+            <!-- Dropdown item -->
+            <li class="nav-item">
+              <a href="#audio-guia" class="text-[#B47943] duration-300 button"
+                >audio guia</a
+              >
+            </li>
+
+            <!-- Dropdown item -->
+            <li class="nav-item">
+              <a href="#galeria" class="text-[#B47943] duration-300 button"
+                >Galeria</a
+              >
+            </li>
+
+            <!-- Dropdown item -->
+            <li class="nav-item">
+              <a href="#sobre-nos" class="text-[#B47943] duration-300 button"
+                >sobre nós</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- =========== Mobile Menu End =========== -->
+
+    <!--header init-->
+    <header
+      id="inicio"
+      class="mx-auto bg-header w-full h-[500px] sm:h-[500px] md:h-[900px] relative"
+    >
+      <img
+        class="w-full h-full absolute z-[-1] object-cover"
+        src="/static/images/bd-header.png"
+        alt="logo-top"
+      />
+
+      <div class="m-auto container flex flex-col md:flex-row text-white h-full">
+        <div
+          class="w-full md:w-full lg:w-[70%] xl:w-[50%] h-full flex flex-col h-full justify-center gap-[22px] sm:gap-[72px] px-8 md:px-auto"
+        >
+          <h3 class="text-xl sm:text-4xl md:text-6xl font-semibold">
+            Conhecendo a Praça Brasil.
+          </h3>
+          <p class="md:text-lg">
+            Um projeto de uma visita guiada pela Praça Brasil em Nova Andradina,
+            Mato Grosso do Sul.
+          </p>
+        </div>
+      </div>
+    </header>
+    <!--header finish-->
+
+    <section class="relative">
+      <img
+        class="w-full h-full absolute z-[-1] object-cover"
+        src="/static/images/park-night2.png"
+        alt="park-night"
+      />
+      <div
+        class="container mx-auto flex flex-col md:flex-row-reverse gap-8 p-8 md:p-16"
+      >
+        <div class="md:w-full">
+          <div class="flex flex-col w-full mb-16">
+            <div class="text-xl sm:text-2xl md:text-5xl text-white">
+              APRESENTAÇÃO
+            </div>
+            <div
+              class="w-32 border-y-2 rounded-full border-[#B47943] mt-5 mb-2"
+            ></div>
+            <div class="text-white text-center text-justify">
+              Olá seja bem-vindos ao projeto Conhecendo a Praça Brasil, um
+              projeto de uma visita guiada pela Praça Brasil em Nova Andradina,
+              Mato Grosso do Sul. Desenvolvido pela acadêmica Carolina Luiza
+              Feldkircher Gonzaga do curso de História da Universidade Federal
+              de Mato Grosso do Sul, sob orientação do professor Dr. Danilo
+              Leite Moreira. <br /><br />
+              Nova Andradina é um município localizado na região sudeste do
+              estado de Mato Grosso do Sul. E fica a 280 km de Campo Grande,
+              Capital do Estado. Seu surgimento se deve as ações empreendidas
+              por Antônio Joaquim Moura Andrade, dono Moura Andrade e Cia. A
+              empresa colonizadora responsável pela abertura e colonização do
+              município na década de 1950. <br /><br />
+              A Praça Brasil é um local icônico no município de Nova Andradina,
+              repleto de história e significado. Este projeto propõe a criação
+              de uma visita audioguiada que permitirá aos moradores locais e
+              turistas explorar a praça de maneira envolvente, informativa e
+              educativa.<br /><br />
+              Você se lembra de como era a praça Brasil até o ano de 2013, antes
+              do processo de revitalização? A Praça Brasil começou a ser
+              construída no ano de 1977. Conforme consta na placa de inauguração
+              a praça foi entregue para população pelo então prefeito da época
+              Antônio Rosário Migliorini, no dia 30 de maio de 1978. A primeira
+              Praça contava com uma concha acústica, bancos, um busto de Antonio
+              Joaquim de Moura Andrade e anos mais tarde foi construída uma
+              fonte, desde a inauguração a praça sempre foi um espaço de
+              convivência dos Nova Andradinense.<br /><br />
+              Em 2013, durante a gestão do então prefeito Roberto Hashioka
+              (PMDB), a praça passou por um processo de revitalização sob a
+              direção do arquiteto Eduardo Faust. Após sete anos de esforços, a
+              praça foi finalmente restaurada e entregue de volta à comunidade.
+              Posteriormente, em 30 de abril de 2019, durante a administração do
+              atual prefeito Gilberto Garcia, a praça foi reinaugurada, marcando
+              um novo capítulo em sua história. Nessa reinauguração, três novos
+              monumentos foram acrescentados: o Pavilhão Tuim Monumento
+              Pantanal, o Monumento Ofaié e o Monumento Brasil. Embora esses
+              monumentos sejam representativos dos aspectos da memória e
+              identidade dos habitantes de Nova Andradina, poucos conhecem o
+              profundo significado que cada um deles carrega.
+            </div>
+          </div>
+        </div>
+        <!-- <div class="md:w-[50%]">
+        <img class="w-full leading-normal" src="/static/images/park-night.png" alt="park-night">
+      </div> -->
+      </div>
+    </section>
+
+    <!--audio guide init-->
+    <section id="audio-guia" class="container mx-auto py-16">
+      <div class="flex flex-col items-center w-full mb-16">
+        <div class="text-xl sm:text-2xl md:text-5xl text-slate-500">
+          Áudio Guia
+        </div>
+        <div
+          class="w-32 border-y-2 rounded-full border-[#B47943] mt-5 mb-2"
+        ></div>
+        <div class="text-slate-500 text-center">
+          "Explore a Praça Brasil por meio do nosso Áudio guia Interativo. Cada
+          ponto vermelho marca uma sessão dedicada a um monumento. Toque nos
+          pontos para acessar informações, curiosidades e fotos exclusivas de
+          cada marco histórico."
+        </div>
+      </div>
+      <div class="park w-full">
+        <div class="bg-header w-full relative">
+          <img class="w-full" src="/static/images/park.png" alt="" />
+          <div class="group" data-target="modal-1">
+            <img
+              class="absolute top-[6%] left-[25%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
+          <div class="group" data-target="modal-2">
+            <img
+              class="absolute top-[25%] left-[47%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
+          <div class="group" data-target="modal-3">
+            <img
+              class="absolute top-[6%] left-[63%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
+          <div class="group" data-target="modal-4">
+            <img
+              class="absolute top-[59%] left-[82%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
+          <div class="group" data-target="modal-5">
+            <img
+              class="absolute top-[43%] left-[24%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div
+          id="modal-1"
+          class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
+        >
+          <!-- Conteúdo do Modal 1 -->
+          <div
+            class="modal-background absolute inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <div
+            class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
+          >
+            <div class="flex justify-between gap-[32px]">
+              <h2 class="text-lg font-semibold">Lorem ipsum</h2>
+              <button class="text-2xl" id="fechar-modal-1">x</button>
+            </div>
+            <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
+              <p class="text-justify w-64 md:w-80">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <!-- Swiper -->
+              <div class="swiper mySwiper w-72 h-auto">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?animal"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?nature"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?people"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?flower"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?travel"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?fruits"
+                      alt="img"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-button-next text-[#B47943]"></div>
+                <div class="swiper-button-prev text-[#B47943]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="modal-2"
+          class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
+        >
+          <!-- Conteúdo do Modal 2 -->
+          <div
+            class="modal-background absolute inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <div
+            class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
+          >
+            <div class="flex justify-between gap-[32px]">
+              <h2 class="text-lg font-semibold">
+                PAVILHÃO TUIM MONUMENTO PANTANAL
+              </h2>
+              <button class="text-2xl" id="fechar-modal-2">x</button>
+            </div>
+            <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
+              <p class="text-justify w-64 md:w-80">
+                Alinhado com a Torre do Santuário, Faust criou dois pórticos
+                simétricos que organizam um espaço livre pavimentado para
+                eventos e feiras, o desenho de piso baseado em uma folha de
+                árvore simboliza a flora pantaneira. As linhas dos pórticos
+                fazem menção as asas do Tuiuiú (ave ícone do pantanal)
+                simbolizando a fauna pantaneira. O monumento pantanal ao centro
+                é elemento principal da praça, e não passa despercebido pela sua
+                imponência sendo um ícone símbolo da cidade.
+              </p>
+              <!-- Swiper -->
+              <div class="swiper mySwiper w-72 h-auto">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/pantanal/01.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/pantanal/02.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/pantanal/03.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <!-- <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?flower" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?travel" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?fruits" alt="img"></div> -->
+                </div>
+                <div class="swiper-button-next text-[#B47943]"></div>
+                <div class="swiper-button-prev text-[#B47943]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="modal-3"
+          class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
+        >
+          <!-- Conteúdo do Modal 3 -->
+          <div
+            class="modal-background absolute inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <div
+            class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
+          >
+            <div class="flex justify-between gap-[32px]">
+              <h2 class="text-lg font-semibold">Monumento Brasil</h2>
+              <button class="text-2xl" id="fechar-modal-3">x</button>
+            </div>
+            <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
+              <p class="text-justify w-64 md:w-80">
+                O obelisco faz fundo ao monumento Brasil, sua composição faz
+                menção a bandeira Brasileira, um espelho d’água ao centro é
+                limitado por 27 totens que simbolizam os 26 estados e o distrito
+                federal. O busto antigo de Antônio Joaquim de Moura Andrade, foi
+                relocado para o centro do espelho d’água. Hoje, o busto esta
+                centralizado no meio da fonte cercado de água que jorram para
+                cima e de luzes. Toda atenção ainda permanece voltada para
+                colonizador. Assim, como o nome da Principal avenida da Cidade,
+                a Avenida Antonio Joaquim de Moura Andrade.
+              </p>
+              <!-- Swiper -->
+              <div class="swiper mySwiper w-72 h-auto">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/brasil/01.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/brasil/02.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/brasil/03.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <!-- <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?flower" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?travel" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?fruits" alt="img"></div> -->
+                </div>
+                <div class="swiper-button-next text-[#B47943]"></div>
+                <div class="swiper-button-prev text-[#B47943]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="modal-4"
+          class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
+        >
+          <!-- Conteúdo do Modal 4 -->
+          <div
+            class="modal-background absolute inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <div
+            class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
+          >
+            <div class="flex justify-between gap-[32px]">
+              <h2 class="text-lg font-semibold">Lorem ipsum</h2>
+              <button class="text-2xl" id="fechar-modal-4">x</button>
+            </div>
+            <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
+              <p class="text-justify w-64 md:w-80">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <!-- Swiper -->
+              <div class="swiper mySwiper w-72 h-auto">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?animal"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?nature"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?people"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?flower"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?travel"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60"
+                      src="https://source.unsplash.com/1920x1280/?fruits"
+                      alt="img"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-button-next text-[#B47943]"></div>
+                <div class="swiper-button-prev text-[#B47943]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="modal-5"
+          class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
+        >
+          <div
+            class="modal-background absolute inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <div
+            class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
+          >
+            <div class="flex justify-between gap-[32px]">
+              <h2 class="text-lg font-semibold">Monumento Povo Ofayé</h2>
+              <button class="text-2xl" id="fechar-modal-5">x</button>
+            </div>
+            <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
+              <p class="text-justify w-64 md:w-80">
+                Antes da chegada das colonizadoras, a região era habitada por
+                povos indígenas como os Guarani e Ofaié, que hoje não estão mais
+                presentes na cidade. A colonização, conhecida como Frente de
+                Expansão e iniciada no século XIX, resultou em poucos
+                sobreviventes, os quais foram assimilados ao novo estilo de vida
+                local, tornando-se peões. <br />
+                <br />
+
+                A construção da memória desempenha um papel crucial na lembrança
+                ou esquecimento de grupos e pessoas. A ausência de um local de
+                memória para os povos indígenas dessa região faz com que muitos
+                desconheçam sua existência, pois essa memória ainda não foi
+                formalmente reconhecida. O monumento assume importância
+                significativa para Nova Andradina, servindo como um memorial dos
+                primeiros habitantes da região, que, embora esquecidos, são
+                parte integral da história do município.
+              </p>
+              <!-- Swiper -->
+              <div class="swiper mySwiper w-72 h-auto">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/ofaie/02.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <div class="swiper-slide flex items-center">
+                    <img
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/ofaie/01.jpg"
+                      alt="img"
+                    />
+                  </div>
+                  <!-- <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?people" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?flower" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?travel" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?fruits" alt="img"></div> -->
+                </div>
+                <div class="swiper-button-next text-[#B47943]"></div>
+                <div class="swiper-button-prev text-[#B47943]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== Filter Section Start =========== -->
+    <section id="galeria" class="py-20 relative bg-[#EAEAEA]">
+      <div class="container">
+        <div class="flex flex-col items-center w-full mb-16">
+          <div class="text-xl sm:text-2xl md:text-5xl text-slate-500">
+            Galeria de Fotos
+          </div>
+          <div
+            class="w-32 border-y-2 rounded-full border-[#B47943] mt-5 mb-2"
+          ></div>
+          <div class="text-slate-500 text-center">
+            "Reviva a rica história da Praça Brasil por meio de nossa galeria
+            interativa, onde cada foto conta uma parte significativa dessa
+            jornada. Utilize nossos filtros predefinidos para navegar pelas
+            memórias do cartão postal de Nova Andradina."
+          </div>
+        </div>
+        <ul class="filter-options flex flex-wrap justify-center gap-3">
+          <style>
+            .active a {
+              background-color: #b47943 !important;
+            }
+          </style>
+          <li class="inline-block font-medium active" data-group="all">
+            <a href="javascript: void(0);">Todas</a>
+          </li>
+          <li class="inline-block font-medium" data-group="antigas">
+            <a href="javascript: void(0);">Antigas</a>
+          </li>
+          <li class="inline-block font-medium" data-group="atuais">
+            <a href="javascript: void(0);">Atuais</a>
+          </li>
+          <li class="inline-block font-medium" data-group="digital">
+            <a href="javascript: void(0);">Monumentos</a>
+          </li>
+          <!-- <li class="inline-block font-medium" data-group="photography">
+                  <a href="javascript: void(0);">Photography</a>
+              </li> -->
+        </ul>
+
+        <div
+          id="gallery-wrapper"
+          class="md:flex justify-center mx-auto mt-10 container bg-[#E1D09A]"
+        >
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["antigas"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/antiga/03.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/antiga/03.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Praça brasil antiga com decoração de natal</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: severino Santos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["atuais"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/atual/02.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/atual/02.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Imagem aeria da Praça e Igreja</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: Eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["atuais"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/atual/01.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/atual/01.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Imagem aerea desfile cívico com a praça
+                    revitalizada</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: Eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["antigas"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/antiga/04.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/antiga/04.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Concha acustica praça antiga</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Fonte: Jornal da Nova
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["antigas"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/antiga/05.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/antiga/05.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600">Imagem aéria da cidade</strong>
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Fonte: Nova News
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["digital"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/pantanal/02.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/pantanal/02.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Centro do Monumento Pantanal</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["antigas"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/antiga/02.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/antiga/02.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Praça brasil antiga com decoração de natal</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: severino Santos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["antigas"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/antiga/06.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/antiga/06.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600">Imagem aéria da cidade</strong>
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Fonte: Nova News
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["digital"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/brasil/01.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/brasil/01.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600">Monumento Praça Brasil</strong>
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["digital"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/pantanal/03.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/pantanal/03.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Lateral do Monumento Pantanal</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["digital"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/brasil/03.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/brasil/03.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600"
+                    >Foto noturna monumento brasil</strong
+                  >
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto eduardo faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/3 sm:w-1/2 p-2 picture-item overflow-hidden"
+            data-groups='["digital"]'
+          >
+            <div class="group">
+              <div class="relative">
+                <img src="/static/images/ofaie/02.jpg" class="rounded-md w-full" />
+                <div
+                  class="absolute inset-2 group-hover:bg-white/80 transition-all duration-500 z-0 rounded-md"
+                ></div>
+              </div>
+              <div class="transition-all duration-500">
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                >
+                  <a
+                    href="/static/images/ofaie/02.jpg"
+                    class="image-popup relative text-white hover:bg-black rounded-full flex items-center justify-center hover:transition-all hover:duration-500 h-10 w-10 bg-[#B47943]"
+                    ><i class="fa-solid fa-camera"></i
+                  ></a>
+                </div>
+
+                <div
+                  class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 transition-all duration-500"
+                >
+                  <strong class="text-slate-600">Monumento Povo Ofayé.</strong>
+                  <p class="text-base font-medium text-[#B47943] duration-500">
+                    Foto: Eduardo Faust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =========== Filter Section End =========== -->
+
+    <section class="relative">
+      <img
+        class="w-full h-full absolute z-[-1] object-cover"
+        src="/static/images/park-night2.png"
+        alt="park-night"
+      />
+      <div
+        class="container mx-auto flex flex-col md:flex-row gap-8 p-8 md:p-16"
+      >
+        <div class="md:w-[50%]">
+          <div class="flex flex-col w-full mb-16">
+            <div class="text-xl sm:text-2xl md:text-5xl text-white">
+              Importância da Educação Patrimonial
+            </div>
+            <div
+              class="w-32 border-y-2 rounded-full border-[#B47943] mt-5 mb-2"
+            ></div>
+            <div class="text-white text-center text-justify">
+              A educação patrimonial desempenha um papel crucial na preservação
+              e promoção da riqueza cultural e histórica de uma sociedade. Este
+              processo educativo busca sensibilizar as pessoas quanto à
+              importância de conhecer, valorizar e conservar o patrimônio
+              cultural, abrangendo tanto bens materiais quanto imateriais que
+              contam a história e a identidade de uma comunidade. <br /><br />
+
+              Museus, sítios arqueológicos, monumentos históricos e
+              manifestações culturais locais representam fontes valiosas de
+              aprendizado, ressaltando o potencial educativo do patrimônio. A
+              educação patrimonial não se limita a transmitir conhecimento
+              histórico; ela também estimula a curiosidade, o pensamento crítico
+              e a criatividade. <br /><br />
+
+              Essa abordagem educacional é essencial para fortalecer a
+              identidade, formar cidadãos conscientes, promover o
+              desenvolvimento sustentável e valorizar o conhecimento histórico e
+              cultural. Investir na educação patrimonial é, portanto, investir
+              no enriquecimento e na preservação do legado cultural, assegurando
+              que as futuras gerações possam apreciar e aprender com a
+              diversidade e a riqueza do passado.
+            </div>
+          </div>
+        </div>
+        <div class="md:w-[50%]">
+          <img
+            class="w-full leading-normal"
+            src="/static/images/park-night.png"
+            alt="park-night"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="sobre-nos"
+      class="container mx-auto py-[50px] flex-col flex gap-12"
+    >
+      <div class="text-xl sm:text-2xl md:text-5xl lg:text-6xl">
+        Equipe de Profissionais
+      </div>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-3 md:gap-12 mx-auto md:px-32"
+        style="align-items: start"
+      >
+        <div class="flex-col flex gap-4">
+          <img src=".//static/images/dr_danilo.jpeg" alt="about" />
+          <strong class="sm:text-xl">Dr. Danilo Leite Moreira</strong>
+          <p>Professor no curso de História da UFMS</p>
+        </div>
+        <div class="flex-col flex gap-4">
+          <img src=".//static/images/Carol.jpeg" alt="about2" />
+          <strong class="text-xl">Carolina Luiza Feldkircher Gonzaga</strong>
+          <p>Acadêmica no curso de História da UFMS</p>
+        </div>
+        <!-- <div class="flex-col flex gap-4">
+        <img src="https://source.unsplash.com/1920x1280/?people" alt="about3">
+        <strong class="text-3xl">Laura Erakovic</strong>
+        <p>CEO Founder</p>
+      </div> -->
+      </div>
+    </section>
+
+    <!-- =========== Footer Section Start =========== -->
+    <footer class="flex flex-col gap-10 container mx-auto py-10">
+      <div class="flex flex-col items-center w-full gap-2 text-center mx-auto">
+        <div class="text-xl sm:text-2xl md:text-5xl text-slate-500">
+          Conhecendo a Praça Brasil.
+        </div>
+        <!-- <div class="w-32 border-y-2 rounded-full border-[#B47943] mt-5 mb-2"></div> -->
+        <div class="text-slate-500 text-center">
+          Um projeto de uma visita guiada pela Praça Brasil em Nova Andradina,
+          Mato Grosso do Sul.
+        </div>
+        <img src="/static/images/logo.png" alt="logo-footer" />
+      </div>
+      <hr />
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-none"
+      >
+        <div class="text-slate-500 w-full flex justify-start items-center">
+          © 2023 Design. Todos os direitos reservados.
+        </div>
+        <div class="flex justify-center items-center w-full">
+          <a href="#" class="">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#6b7280"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#6b7280"
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334c0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518a3.301 3.301 0 0 0 1.447-1.817a6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429a3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218a3.203 3.203 0 0 1-.865.115a3.23 3.23 0 0 1-.614-.057a3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#6b7280"
+                d="M12.001 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6Zm0-2a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm6.5-.25a1.25 1.25 0 0 1-2.5 0a1.25 1.25 0 0 1 2.5 0ZM12.001 4c-2.474 0-2.878.007-4.029.058c-.784.037-1.31.142-1.798.332a2.886 2.886 0 0 0-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.007 9.075 4 9.461 4 12c0 2.475.007 2.878.058 4.029c.037.783.142 1.31.331 1.797c.17.435.37.748.702 1.08c.337.336.65.537 1.08.703c.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.475 0 2.878-.007 4.029-.058c.782-.037 1.308-.142 1.797-.331a2.91 2.91 0 0 0 1.08-.703c.337-.336.538-.649.704-1.08c.19-.492.296-1.018.332-1.8c.052-1.103.058-1.49.058-4.028c0-2.474-.007-2.878-.058-4.029c-.037-.782-.143-1.31-.332-1.798a2.912 2.912 0 0 0-.703-1.08a2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.926 4.006 14.54 4 12 4Zm0-2c2.717 0 3.056.01 4.123.06c1.064.05 1.79.217 2.427.465c.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.047 1.066.06 1.405.06 4.122c0 2.717-.01 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.884 4.884 0 0 1-1.153 1.772a4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465c-1.067.047-1.406.06-4.123.06c-2.717 0-3.056-.01-4.123-.06c-1.064-.05-1.789-.218-2.427-.465a4.89 4.89 0 0 1-1.772-1.153a4.905 4.905 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428c-.048-1.066-.06-1.405-.06-4.122c0-2.717.01-3.056.06-4.122c.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772a4.897 4.897 0 0 1 1.772-1.153c.637-.248 1.362-.415 2.427-.465C8.945 2.013 9.284 2 12.001 2Z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#6b7280"
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"
+              />
+            </svg>
+          </a>
+        </div>
+        <a
+          href="#"
+          class="flex justify-center sm:justify-end items-center w-full"
+        >
+          <img width="60" height="60" src="/static/images/aluz-web.png" alt="aluz-web" />
+        </a>
+      </div>
+    </footer>
+    <!-- =========== Footer Section End =========== -->
+
+    <!-- Frost Plugin Js -->
+    <script src="static/libs/@frostui/tailwindcss/frostui.js"></script>
+
+    <!-- Shufflejs Plugin Js -->
+    <script src="static/libs/shufflejs/shuffle.min.js"></script>
+
+    <!-- glightbox Plugin Js -->
+    <script src="static/libs/glightbox/js/glightbox.min.js"></script>
+
+    <!-- Portfolio Masonary Js -->
+    <script src="static/js/gallery.min.js"></script>
+
+    <!-- Tiheme Js -->
+    <script src="static/js/theme.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
