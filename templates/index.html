@@ -268,6 +268,13 @@
       <div class="park w-full">
         <div class="bg-header w-full relative">
           <img class="w-full" src="/static/images/park.png" alt="" />
+          <div class="group" data-target="modal-1">
+            <img
+              class="absolute top-[6%] left-[25%] group-hover:animate-bounce w-[24px] md:w-auto"
+              src="/static/images/maps.png"
+              alt="maps"
+            />
+          </div>
           <div class="group" data-target="modal-2">
             <img
               class="absolute top-[25%] left-[47%] group-hover:animate-bounce w-[24px] md:w-auto"
@@ -282,9 +289,9 @@
               alt="maps"
             />
           </div>
-          <div class="group" data-target="modal-4">
+          <div class="group" data-target="modal-5">
             <img
-              class="absolute top-[59%] left-[82%] group-hover:animate-bounce w-[24px] md:w-auto"
+              class="absolute top-[43%] left-[24%] group-hover:animate-bounce w-[24px] md:w-auto"
               src="/static/images/maps.png"
               alt="maps"
             />
@@ -419,10 +426,9 @@
         </div>
 
         <div
-          id="modal-4"
+          id="modal-5"
           class="fixed inset-0 flex items-center justify-center hidden z-30 modal"
         >
-          <!-- Conteúdo do Modal 4 -->
           <div
             class="modal-background absolute inset-0 bg-black opacity-50 z-40"
           ></div>
@@ -430,64 +436,49 @@
             class="flex gap-[32px] flex-col modal-content bg-white p-6 rounded shadow-lg absolute z-50 h-[90vh] sm:h-auto overflow-y-auto"
           >
             <div class="flex justify-between gap-[32px]">
-              <h2 class="text-lg font-semibold">Lorem ipsum</h2>
-              <button class="text-2xl" id="fechar-modal-4">x</button>
+              <h2 class="text-lg font-semibold">Monumento Povo Ofayé</h2>
+              <button class="text-2xl" id="fechar-modal-5">x</button>
             </div>
             <div class="flex justify-between gap-[32px] flex-col sm:flex-row">
               <p class="text-justify w-64 md:w-80">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Antes da chegada das colonizadoras, a região era habitada por
+                povos indígenas como os Guarani e Ofaié, que hoje não estão mais
+                presentes na cidade. A colonização, conhecida como Frente de
+                Expansão e iniciada no século XIX, resultou em poucos
+                sobreviventes, os quais foram assimilados ao novo estilo de vida
+                local, tornando-se peões. <br />
+                <br />
+
+                A construção da memória desempenha um papel crucial na lembrança
+                ou esquecimento de grupos e pessoas. A ausência de um local de
+                memória para os povos indígenas dessa região faz com que muitos
+                desconheçam sua existência, pois essa memória ainda não foi
+                formalmente reconhecida. O monumento assume importância
+                significativa para Nova Andradina, servindo como um memorial dos
+                primeiros habitantes da região, que, embora esquecidos, são
+                parte integral da história do município.
               </p>
               <!-- Swiper -->
               <div class="swiper mySwiper w-72 h-auto">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide flex items-center">
                     <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?animal"
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/ofaie/02.jpg"
                       alt="img"
                     />
                   </div>
                   <div class="swiper-slide flex items-center">
                     <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?nature"
+                      class="w-80 h-60 object-contain"
+                      src="/static/images/ofaie/01.jpg"
                       alt="img"
                     />
                   </div>
-                  <div class="swiper-slide flex items-center">
-                    <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?people"
-                      alt="img"
-                    />
-                  </div>
-                  <div class="swiper-slide flex items-center">
-                    <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?flower"
-                      alt="img"
-                    />
-                  </div>
-                  <div class="swiper-slide flex items-center">
-                    <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?travel"
-                      alt="img"
-                    />
-                  </div>
-                  <div class="swiper-slide flex items-center">
-                    <img
-                      class="w-80 h-60"
-                      src="https://source.unsplash.com/1920x1280/?fruits"
-                      alt="img"
-                    />
-                  </div>
+                  <!-- <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?people" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?flower" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?travel" alt="img"></div>
+                <div class="swiper-slide flex items-center"><img class="w-80 h-60" src="https://source.unsplash.com/1920x1280/?fruits" alt="img"></div> -->
                 </div>
                 <div class="swiper-button-next text-[#B47943]"></div>
                 <div class="swiper-button-prev text-[#B47943]"></div>
@@ -495,7 +486,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
