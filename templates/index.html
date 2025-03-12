@@ -515,132 +515,113 @@
     </button>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const audio = document.getElementById("audioPlayer");
-          const playPauseButton = document.getElementById("playPauseButton");
-          const floatingPlayButton = document.getElementById("floatingPlayButton");
-          const prevButton = document.getElementById("prevButton");
-          const nextButton = document.getElementById("nextButton");
-          const progressBar = document.getElementById("progressBar");
-          const currentTimeDisplay = document.getElementById("currentTime");
-          const durationDisplay = document.getElementById("duration");
-          const volumeControl = document.getElementById("volumeControl");
-  
-          const playlist = [
-              "static/audio/Primeiro Áudio Apresentação.mp3",
-              "static/audio/Monumento Brasil.mp3",
-              "static/audio/Monumento Pantanal.mp3",
-              "static/audio/Monumento Povo Ofaié.mp3",
-              "static/audio/conclusão educação patrimonial.mp3"
-          ];
-          let currentTrack = 0;
-  
-          // 🔊 **Toca automaticamente ao carregar a página**
-          function playAudioOnLoad() {
-              audio.play().then(() => {
-                  updatePlayButtons("⏸️");
-              }).catch(error => {
-                  console.log("Autoplay bloqueado pelo navegador. Usuário precisa interagir.");
-              });
-          }
-  
-          // Atualizar tempo total quando o áudio carregar
-          audio.addEventListener("loadedmetadata", () => {
-              durationDisplay.textContent = formatTime(audio.duration);
-          });
-  
-          // Atualizar barra de progresso e tempo atual
-          audio.addEventListener("timeupdate", () => {
-              progressBar.value = (audio.currentTime / audio.duration) * 100;
-              currentTimeDisplay.textContent = formatTime(audio.currentTime);
-          });
-  
-          // 🔄 **Reproduzir a próxima faixa automaticamente**
-          audio.addEventListener("ended", () => {
-              currentTrack = (currentTrack + 1) % playlist.length;
-              changeTrack();
-          });
-  
-          // Play/Pause (Botão principal e flutuante)
-          playPauseButton.addEventListener("click", togglePlayPause);
-          floatingPlayButton.addEventListener("click", togglePlayPause);
-  
-          function togglePlayPause() {
-              if (audio.paused) {
-                  audio.play();
-                  updatePlayButtons("⏸️");
-              } else {
-                  audio.pause();
-                  updatePlayButtons("▶️");
-              }
-          }
-  
-          function updatePlayButtons(icon) {
-              playPauseButton.textContent = icon;
-              floatingPlayButton.textContent = icon;
-          }
-  
-          // Voltar para a faixa anterior
-          prevButton.addEventListener("click", () => {
-              if (audio.currentTime > 3) {
-                  audio.currentTime = 0;
-              } else {
-                  currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
-                  changeTrack();
-              }
-          });
-  
-          // Avançar para a próxima faixa
-          nextButton.addEventListener("click", () => {
-              currentTrack = (currentTrack + 1) % playlist.length;
-              changeTrack();
-          });
-  
-          // Mudar posição do áudio arrastando a barra de progresso
-          progressBar.addEventListener("input", () => {
-              audio.currentTime = (progressBar.value / 100) * audio.duration;
-          });
-  
-          // Controle de volume
-          volumeControl.addEventListener("input", () => {
-              audio.volume = volumeControl.value;
-          });
-  
-          // **Trocar de faixa**
-          function changeTrack() {
-              audio.src = playlist[currentTrack];
-              audio.play();
-              updatePlayButtons("⏸️");
-          }
-  
-          // **Formatador de tempo (min:seg)**
-          function formatTime(seconds) {
-              const min = Math.floor(seconds / 60);
-              const sec = Math.floor(seconds % 60);
-              return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-          }
-  
-          // 🎵 **Play ao clicar no menu (Desktop e Mobile)**
-          document.querySelectorAll('a[href="#audio-guia"]').forEach(link => {
-              link.addEventListener("click", function (event) {
-                  event.preventDefault(); // Evita o comportamento padrão
-  
-                  // Rolar suavemente até a seção do player
-                  document.querySelector("#audio-guia").scrollIntoView({ behavior: "smooth" });
-  
-                  // Dar play no áudio
-                  if (audio.paused) {
-                      audio.play();
-                      updatePlayButtons("⏸️");
-                  }
-              });
-          });
-  
-          // 🟢 **Tenta tocar automaticamente ao carregar a página**
-          playAudioOnLoad();
-      });
-  </script>
-  
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("audioPlayer");
+            const playPauseButton = document.getElementById("playPauseButton");
+            const floatingPlayButton = document.getElementById("floatingPlayButton");
+            const prevButton = document.getElementById("prevButton");
+            const nextButton = document.getElementById("nextButton");
+            const progressBar = document.getElementById("progressBar");
+            const currentTimeDisplay = document.getElementById("currentTime");
+            const durationDisplay = document.getElementById("duration");
+            const volumeControl = document.getElementById("volumeControl");
+    
+            const playlist = [
+                "static/audio/Primeiro Áudio Apresentação.mp3",
+                "static/audio/Monumento Brasil.mp3",
+                "static/audio/Monumento Pantanal.mp3",
+                "static/audio/Monumento Povo Ofaié.mp3",
+                "static/audio/conclusão educação patrimonial.mp3"
+            ];
+            let currentTrack = 0;
+    
+            // Atualizar tempo total quando o áudio carregar
+            audio.addEventListener("loadedmetadata", () => {
+                durationDisplay.textContent = formatTime(audio.duration);
+            });
+    
+            // Atualizar barra de progresso e tempo atual
+            audio.addEventListener("timeupdate", () => {
+                progressBar.value = (audio.currentTime / audio.duration) * 100;
+                currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            });
+    
+            // Play/Pause (Botão principal e flutuante)
+            playPauseButton.addEventListener("click", togglePlayPause);
+            floatingPlayButton.addEventListener("click", togglePlayPause);
+    
+            function togglePlayPause() {
+                if (audio.paused) {
+                    audio.play();
+                    updatePlayButtons("⏸️");
+                } else {
+                    audio.pause();
+                    updatePlayButtons("▶️");
+                }
+            }
+    
+            function updatePlayButtons(icon) {
+                playPauseButton.textContent = icon;
+                floatingPlayButton.textContent = icon;
+            }
+    
+            // Voltar para a faixa anterior
+            prevButton.addEventListener("click", () => {
+                if (audio.currentTime > 3) {
+                    audio.currentTime = 0;
+                } else {
+                    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+                    changeTrack();
+                }
+            });
+    
+            // Avançar para a próxima faixa
+            nextButton.addEventListener("click", () => {
+                currentTrack = (currentTrack + 1) % playlist.length;
+                changeTrack();
+            });
+    
+            // Mudar posição do áudio arrastando a barra de progresso
+            progressBar.addEventListener("input", () => {
+                audio.currentTime = (progressBar.value / 100) * audio.duration;
+            });
+    
+            // Controle de volume
+            volumeControl.addEventListener("input", () => {
+                audio.volume = volumeControl.value;
+            });
+    
+            // Trocar de faixa
+            function changeTrack() {
+                audio.src = playlist[currentTrack];
+                audio.play();
+                updatePlayButtons("⏸️");
+            }
+    
+            // Formatador de tempo (min:seg)
+            function formatTime(seconds) {
+                const min = Math.floor(seconds / 60);
+                const sec = Math.floor(seconds % 60);
+                return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+            }
+    
+            // 🎵 Play ao clicar no menu (Desktop e Mobile)
+            document.querySelectorAll('a[href="#audio-guia"]').forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Evita o comportamento padrão
+    
+                    // Rolar suavemente até a seção do player
+                    document.querySelector("#audio-guia").scrollIntoView({ behavior: "smooth" });
+    
+                    // Dar play no áudio
+                    if (audio.paused) {
+                        audio.play();
+                        updatePlayButtons("⏸️");
+                    }
+                });
+            });
+        });
+    </script>
   
 
 
