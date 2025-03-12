@@ -67,7 +67,7 @@
               <!-- Inner Page Dropdown -->
               <li class="nav-item">
                 <a href="#audio-guia" class="text-[#B47943] duration-300 button"
-                >audio guia</a
+                  >audio guia</a
                 >
               </li>
 
@@ -134,7 +134,7 @@
             <!-- Dropdown item -->
             <li class="nav-item">
               <a href="#audio-guia" class="text-[#B47943] duration-300 button"
-              >audio guia</a
+                >audio guia</a
               >
             </li>
 
@@ -250,7 +250,7 @@
     </section>
 
     <!--audio guide init-->
-    <section id="audio-guia" class="container mx-auto py-16 relative">
+    <section id="audio-guia" class="container mx-auto py-16">
       <div class="flex flex-col items-center w-full mb-16">
         <div class="text-xl sm:text-2xl md:text-5xl text-slate-500">
           Áudio Guia
@@ -270,21 +270,21 @@
           <img class="w-full" src="/static/images/park.png" alt="" />
           <div class="group" data-target="modal-1">
             <img
-              class="absolute top-[25%] left-[47%] animate-bounce group-hover:animate-none w-[24px] md:w-auto"
+              class="absolute top-[25%] left-[47%] group-hover:animate-bounce w-[24px] md:w-auto"
               src="/static/images/maps.png"
               alt="maps"
             />
           </div>
           <div class="group" data-target="modal-2">
             <img
-              class="absolute top-[6%] left-[63%] animate-bounce group-hover:animate-none w-[24px] md:w-auto"
+              class="absolute top-[6%] left-[63%] group-hover:animate-bounce w-[24px] md:w-auto"
               src="/static/images/maps.png"
               alt="maps"
             />
           </div>
           <div class="group" data-target="modal-3">
             <img
-              class="absolute top-[43%] left-[24%] animate-bounce group-hover:animate-none w-[24px] md:w-auto"
+              class="absolute top-[43%] left-[24%] group-hover:animate-bounce w-[24px] md:w-auto"
               src="/static/images/maps.png"
               alt="maps"
             />
@@ -479,152 +479,30 @@
           </div>
         </div>
       </div>
-
-      
-      <div class="w-full pt-4">
-        <div class="bg-white shadow-lg rounded-lg p-4 w-full max-w-full">
-            <!-- Player de Áudio -->
-            <audio id="audioPlayer" src="static/audio/Primeiro Áudio Apresentação.mp3"></audio>
-
-            <!-- Controles -->
-            <div class="flex items-center justify-between space-x-4">
-                <button id="prevButton" class="text-2xl">⏮️</button>
-                <button id="playPauseButton" class="text-2xl">▶️</button>
-                <button id="nextButton" class="text-2xl">⏭️</button>
-            </div>
-
-            <!-- Barra de progresso -->
-            <div class="mt-2 flex items-center">
-                <span id="currentTime" class="text-sm">0:00</span>
-                <input id="progressBar" type="range" value="0" class="w-full mx-2">
-                <span id="duration" class="text-sm">0:00</span>
-            </div>
-
-            <!-- Controle de volume -->
-            <div class="mt-2 flex items-center">
-                <span class="text-xl">🔊</span>
-                <input id="volumeControl" type="range" min="0" max="1" step="0.1" value="1" class="w-full ml-2">
-            </div>
-        </div>
-    </div>
-
-    <!-- Botão Flutuante de Play -->
-    <button id="floatingPlayButton" 
-        class="fixed bottom-6 right-6 z-40 animate-bounce bg-orange-400 text-2xl hover:bg-orange-300 text-white p-4 rounded-full shadow-lg transition duration-300">
-        ▶️
-    </button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const audio = document.getElementById("audioPlayer");
-            const playPauseButton = document.getElementById("playPauseButton");
-            const floatingPlayButton = document.getElementById("floatingPlayButton");
-            const prevButton = document.getElementById("prevButton");
-            const nextButton = document.getElementById("nextButton");
-            const progressBar = document.getElementById("progressBar");
-            const currentTimeDisplay = document.getElementById("currentTime");
-            const durationDisplay = document.getElementById("duration");
-            const volumeControl = document.getElementById("volumeControl");
-    
-            const playlist = [
-                "static/audio/Primeiro Áudio Apresentação.mp3",
-                "static/audio/Monumento Brasil.mp3",
-                "static/audio/Monumento Pantanal.mp3",
-                "static/audio/Monumento Povo Ofaié.mp3",
-                "static/audio/conclusão educação patrimonial.mp3"
-            ];
-            let currentTrack = 0;
-    
-            // Atualizar tempo total quando o áudio carregar
-            audio.addEventListener("loadedmetadata", () => {
-                durationDisplay.textContent = formatTime(audio.duration);
-            });
-    
-            // Atualizar barra de progresso e tempo atual
-            audio.addEventListener("timeupdate", () => {
-                progressBar.value = (audio.currentTime / audio.duration) * 100;
-                currentTimeDisplay.textContent = formatTime(audio.currentTime);
-            });
-    
-            // Play/Pause (Botão principal e flutuante)
-            playPauseButton.addEventListener("click", togglePlayPause);
-            floatingPlayButton.addEventListener("click", togglePlayPause);
-    
-            function togglePlayPause() {
-                if (audio.paused) {
-                    audio.play();
-                    updatePlayButtons("⏸️");
-                } else {
-                    audio.pause();
-                    updatePlayButtons("▶️");
-                }
-            }
-    
-            function updatePlayButtons(icon) {
-                playPauseButton.textContent = icon;
-                floatingPlayButton.textContent = icon;
-            }
-    
-            // Voltar para a faixa anterior
-            prevButton.addEventListener("click", () => {
-                if (audio.currentTime > 3) {
-                    audio.currentTime = 0;
-                } else {
-                    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
-                    changeTrack();
-                }
-            });
-    
-            // Avançar para a próxima faixa
-            nextButton.addEventListener("click", () => {
-                currentTrack = (currentTrack + 1) % playlist.length;
-                changeTrack();
-            });
-    
-            // Mudar posição do áudio arrastando a barra de progresso
-            progressBar.addEventListener("input", () => {
-                audio.currentTime = (progressBar.value / 100) * audio.duration;
-            });
-    
-            // Controle de volume
-            volumeControl.addEventListener("input", () => {
-                audio.volume = volumeControl.value;
-            });
-    
-            // Trocar de faixa
-            function changeTrack() {
-                audio.src = playlist[currentTrack];
-                audio.play();
-                updatePlayButtons("⏸️");
-            }
-    
-            // Formatador de tempo (min:seg)
-            function formatTime(seconds) {
-                const min = Math.floor(seconds / 60);
-                const sec = Math.floor(seconds % 60);
-                return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-            }
-    
-            // 🎵 Play ao clicar no menu (Desktop e Mobile)
-            document.querySelectorAll('a[href="#audio-guia"]').forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Evita o comportamento padrão
-    
-                    // Rolar suavemente até a seção do player
-                    document.querySelector("#audio-guia").scrollIntoView({ behavior: "smooth" });
-    
-                    // Dar play no áudio
-                    if (audio.paused) {
-                        audio.play();
-                        updatePlayButtons("⏸️");
-                    }
-                });
-            });
-        });
-    </script>
+      <!-- Player de Áudio Oculto -->
+      <audio id="audio" src="static/audio/Primeiro Áudio Apresentação.mp3"></audio>
   
-
-
+      <!-- Botão Flutuante -->
+      <button id="playButton" 
+          class="absolute bottom-6 right-6 z-40 animate-bounce bg-blue-500 text-2xl hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition duration-300"
+          onclick="toggleAudio()">
+          ▶️
+      </button>
+  
+      <script>
+          const audio = document.getElementById("audio");
+          const playButton = document.getElementById("playButton");
+  
+          function toggleAudio() {
+              if (audio.paused) {
+                  audio.play();
+                  playButton.innerHTML = "⏸️"; // Ícone de pausa
+              } else {
+                  audio.pause();
+                  playButton.innerHTML = "▶️"; // Ícone de play
+              }
+          }
+      </script>
       
     </section>
 
