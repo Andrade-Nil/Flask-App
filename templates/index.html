@@ -487,10 +487,11 @@
           <div class="bg-white shadow-lg rounded-lg p-4 w-full max-w-full">
               <!-- Player de Áudio -->
               <!-- <audio id="audioPlayer" src="static/audio/Primeiro Áudio Apresentação.mp3" controls></audio> -->
-              <audio controls preload="metadata" id="audioPlayer" style="width: 99%">
-                <source src="{{ url_for('static', filename='audio/Primeiro Áudio Apresentação.mp3') }}" type="audio/mpeg">
-                Your browser does not support the audio tag.
+              <audio controls>
+                <source src="{{ url_for('static', filename='audio/primeiro audio_apresentação.mp3') }}" type="audio/mpeg">
+                Seu navegador não suporta o áudio.
             </audio>
+            
               <!-- <audio src="{{ url_for('static', filename='audio/monumento_brasil.mp3') }}" controls></audio> -->
 
               <!-- Controles -->
@@ -534,11 +535,11 @@
             const volumeControl = document.getElementById("volumeControl");
     
             const playlist = [
-                "/static/audio/Primeiro Áudio Apresentação.mp3",
-                "/static/audio/Monumento Brasil.mp3",
-                "/static/audio/Monumento Pantanal.mp3",
-                "/static/audio/Monumento Povo Ofaié.mp3",
-                "/static/audio/conclusão educação patrimonial.mp3"
+                "/static/audio/primeiro_audio_apresentação.mp3",
+                "/static/audio/monumento_brasil.mp3",
+                "/static/audio/monumento_pantanal.mp3",
+                "/static/audio/monumento_povo_ofaie.mp3",
+                "/static/audio/conclusao_educacao_patrimonial.mp3"
             ];
             let currentTrack = 0;
     
