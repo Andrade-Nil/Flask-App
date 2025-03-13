@@ -486,9 +486,32 @@
       <div class="w-full pt-4">
           <div class="bg-white shadow-lg rounded-lg p-4 w-full max-w-full">
               <!-- Player de Áudio -->
-              <audio id="audioPlayer" src="{{ url_for('static', filename='audio/primeiro_audio_apresentacao.mp3') }}" controls></audio>
+              <!-- <audio id="audioPlayer" src="static/audio/Primeiro Áudio Apresentação.mp3" controls></audio> -->
+              <audio controls preload="metadata" id="audioPlayer" style="width: 99%">
+                <source src="{{ url_for('static', filename='/audio/Primeiro Áudio Apresentação.mp3') }}" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+              <!-- <audio src="{{ url_for('static', filename='audio/monumento_brasil.mp3') }}" controls></audio> -->
 
-              
+              <!-- Controles -->
+              <div class="flex items-center justify-between space-x-4">
+                  <button id="prevButton" class="text-2xl">⏮️</button>
+                  <button id="playPauseButton" class="text-2xl">▶️</button>
+                  <button id="nextButton" class="text-2xl">⏭️</button>
+              </div>
+
+              <!-- Barra de progresso -->
+              <div class="mt-2 flex items-center">
+                  <span id="currentTime" class="text-sm">0:00</span>
+                  <input id="progressBar" type="range" value="0" class="w-full mx-2">
+                  <span id="duration" class="text-sm">0:00</span>
+              </div>
+
+              <!-- Controle de volume -->
+              <div class="mt-2 flex items-center">
+                  <span class="text-xl">🔊</span>
+                  <input id="volumeControl" type="range" min="0" max="1" step="0.1" value="1" class="w-full ml-2">
+              </div>
           </div>
       </div>
 
@@ -511,13 +534,12 @@
             const volumeControl = document.getElementById("volumeControl");
     
             const playlist = [
-                "{{ url_for('static', filename='audio/primeiro_audio_apresentacao.mp3') }}",
-                "{{ url_for('static', filename='audio/monumento_brasil.mp3') }}",
-                "{{ url_for('static', filename='audio/monumento_pantanal.mp3') }}",
-                "{{ url_for('static', filename='audio/monumento_povo_ofaie.mp3') }}",
-                "{{ url_for('static', filename='audio/conclusao_educacao_patrimonial.mp3') }}"
+                "/static/audio/Primeiro Áudio Apresentação.mp3",
+                "/static/audio/Monumento Brasil.mp3",
+                "/static/audio/Monumento Pantanal.mp3",
+                "/static/audio/Monumento Povo Ofaié.mp3",
+                "/static/audio/conclusão educação patrimonial.mp3"
             ];
-
             let currentTrack = 0;
     
             // Atualizar tempo total quando o áudio carregar

@@ -1,16 +1,12 @@
-from flask import Flask, render_template, send_from_directory
-import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Servir arquivos estáticos manualmente se necessário
-@app.route('/static/<path:filename>')
-def static_files(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
-
-@app.route('/')
+@app.route('/', methods=["GET"])
 def index():
-    return render_template('index.html')
+  return render_template('index.html', music="Primeiro Áudio Apresentação.mp3")
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
+
