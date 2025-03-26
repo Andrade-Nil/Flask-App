@@ -31,8 +31,6 @@
     <!-- Icons css -->
     <link href="/static/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="/static/audio/Primeiro Áudio Apresentação.mp3" rel="stylesheet" type="audio" />
-
     <style>
       /* Adicione seu estilo existente aqui */
       #navbar {
@@ -68,7 +66,7 @@
 
               <!-- Inner Page Dropdown -->
               <li class="nav-item">
-                <a href="#audio-guia" class="text-[#B47943] duration-300 button"
+                <a href="#audio-guia" class="text-[#B47943] duration-300 button" id="audio-guide"
                 >audio guia</a
                 >
               </li>
@@ -135,7 +133,7 @@
 
             <!-- Dropdown item -->
             <li class="nav-item">
-              <a href="#audio-guia" class="text-[#B47943] duration-300 button"
+              <a href="#audio-guia" class="text-[#B47943] duration-300 button" id="audio-guide"
               >audio guia</a
               >
             </li>
@@ -481,53 +479,103 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-center space-y-4">
+      <div class="flex flex-col items-center pt-10 space-y-4">
         <!-- Botão Play/Pause -->
-        <button id="play-audio" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+        <button id="play-audio" class="px-4 py-2 sm:px-8 sm:py-6 bg-[#B47943] sm:text-xl text-white rounded-lg shadow hover:bg-blue-700 duration-300">
           ▶️ Tocar Áudio
         </button>
       
         <!-- Iframe escondido -->
-        <iframe 
-          id="youtube-audio" 
-          width="1" height="1" 
-          style="position: absolute; left: -9999px; display: none;"
-          src="" 
-          frameborder="0" 
-          allow="autoplay">
-        </iframe>
+        <div id="player-container" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
+          <div id="youtube-player"></div>
+        </div>
       </div>
       
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script>
-      $(document).ready(function() {
-        var videoID = "RriMW2INTdU"; // ID do vídeo do Shorts
-        var isPlaying = false;
-      
-        $("#play-audio").on("click", function() {
-          if (isPlaying) {
-            // Pausar (remover o iframe)
-            $("#youtube-audio").attr("src", "").hide();
-            $(this).text("▶️ Tocar Áudio").removeClass("bg-red-600").addClass("bg-blue-600");
-          } else {
-            // Tocar (adicionar o iframe)
-            var audioURL = "https://www.youtube.com/embed/" + videoID + "?autoplay=1&loop=1&playlist=" + videoID;
-            $("#youtube-audio").attr("src", audioURL).show();
-            $(this).text("⏸️ Pausar Áudio").removeClass("bg-blue-600").addClass("bg-red-600");
-          }
-      
-          isPlaying = !isPlaying;
-        });
-      });
-      </script>
-      
-
-      
-
-    <!-- Botão Flutuante de Play -->
-    <a href="#audio-guia" class="fixed bottom-6 right-6 z-40 animate-bounce bg-orange-400 text-2xl hover:bg-orange-300 text-white p-4 rounded-full shadow-lg transition duration-300">
+      <!-- Botão Flutuante de Play/Pause -->
+      <a href="#" id="floating-audio" class="fixed bottom-6 right-6 z-40 animate-bounce bg-orange-400 text-2xl hover:bg-orange-300 text-white p-4 rounded-full shadow-lg transition duration-300">
         ▶️
-    </a>
+      </a>
+
+
+      <script>
+        var player;
+        var isPlaying = false;
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('youtube-player', {
+            height: '1',
+            width: '1',
+            videoId: 'RriMW2INTdU',
+            playerVars: {
+              'autoplay': 0,
+              'controls': 0
+            },
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        }
+
+        function onPlayerReady(event) {
+          $("#play-audio, #floating-audio").on("click", function(e) {
+            e.preventDefault();
+            toggleAudio();
+          });
+
+          $("#audio-guide").on("click touchend", function(e) {
+            if (isMobile) {
+              e.preventDefault(); // Evita comportamento duplo em mobile
+              var target = this.getAttribute("href");
+              history.pushState(null, null, target); // Mantém a URL correta
+
+              // Primeiro, faz o scroll suavemente para a seção
+              $("html, body").animate(
+                { scrollTop: $(target).offset().top }, 
+                600, 
+                function() { 
+                  toggleAudio(); // Depois do scroll, ativa o áudio
+                }
+              );
+            } else {
+              // Para desktop, mantém o comportamento normal
+              setTimeout(toggleAudio, 600);
+            }
+          });
+        }
+
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING) {
+            isPlaying = true;
+            $("#play-audio").text("⏸️ Pausar Áudio").removeClass("bg-[#B47943]").addClass("bg-red-600");
+            $("#floating-audio").html("⏸️").removeClass("bg-orange-400").addClass("bg-red-600");
+          } else {
+            isPlaying = false;
+            $("#play-audio").text("▶️ Tocar Áudio").removeClass("bg-red-600").addClass("bg-blue-600");
+            $("#floating-audio").html("▶️").removeClass("bg-red-600").addClass("bg-orange-400");
+          }
+        }
+
+        function toggleAudio() {
+          if (isPlaying) {
+            player.pauseVideo();
+          } else {
+            player.playVideo();
+          }
+        }
+
+        // Carregar API do YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      </script>
+
+
+      
+
+      
 
       
     </section>
