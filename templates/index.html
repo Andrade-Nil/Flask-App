@@ -500,8 +500,7 @@
       <script>
         var player;
         var isPlaying = false;
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+      
         function onYouTubeIframeAPIReady() {
           player = new YT.Player('youtube-player', {
             height: '1',
@@ -517,34 +516,33 @@
             }
           });
         }
-
+      
         function onPlayerReady(event) {
+          // Ativar botões de play/pause
           $("#play-audio, #floating-audio").on("click", function(e) {
             e.preventDefault();
             toggleAudio();
           });
-
-          $("#audio-guide").on("click touchend", function(e) {
-            if (isMobile) {
-              e.preventDefault(); // Evita comportamento duplo em mobile
-              var target = this.getAttribute("href");
-              history.pushState(null, null, target); // Mantém a URL correta
-
-              // Primeiro, faz o scroll suavemente para a seção
-              $("html, body").animate(
-                { scrollTop: $(target).offset().top }, 
-                600, 
-                function() { 
-                  toggleAudio(); // Depois do scroll, ativa o áudio
-                }
-              );
-            } else {
-              // Para desktop, mantém o comportamento normal
-              setTimeout(toggleAudio, 600);
-            }
-          });
+      
+          // Se a URL contiver "#audio-guia", rola e tenta tocar o áudio automaticamente
+          if (window.location.hash === "#audio-guia") {
+            $("html, body").animate(
+              { scrollTop: $("#audio-guia").offset().top },
+              600,
+              function() {
+                setTimeout(function() {
+                  var playPromise = player.playVideo();
+                  if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                      alert("Toque no botão de áudio para ouvir a narração.");
+                    });
+                  }
+                }, 500);
+              }
+            );
+          }
         }
-
+      
         function onPlayerStateChange(event) {
           if (event.data == YT.PlayerState.PLAYING) {
             isPlaying = true;
@@ -556,7 +554,7 @@
             $("#floating-audio").html("▶️").removeClass("bg-red-600").addClass("bg-orange-400");
           }
         }
-
+      
         function toggleAudio() {
           if (isPlaying) {
             player.pauseVideo();
@@ -564,17 +562,13 @@
             player.playVideo();
           }
         }
-
+      
         // Carregar API do YouTube
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       </script>
-
-
-      
-
       
 
       
